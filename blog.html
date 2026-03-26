@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Digital Marketing Expert</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <style>
+        .page-header { padding-top: 150px; padding-bottom: 50px; text-align: center; }
+        .pagination { display: flex; justify-content: center; gap: 10px; align-items: center; flex-wrap: wrap; }
+    </style>
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+        <i class="fa-solid fa-moon"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar scrolled">
+        <div class="container nav-content animate-slide-down">
+            <a href="index.html" class="logo">GK Malneedi<span class="accent-text">.</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Skills</a></li>
+                <li><a href="index.html#skills">Tools</a></li>
+                <li><a href="index.html#portfolio">Portfolio</a></li>
+                <li><a href="blog.html" class="accent-text">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <a href="index.html#contact" class="btn btn-primary nav-cta">Book a Call</a>
+            <button class="menu-btn" id="menu-btn"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <div class="page-header secondary-bg">
+        <div class="container">
+            <h1 class="animate-fade-in">All <span class="gradient-text">Insights</span></h1>
+            <p class="animate-fade-in" style="animation-delay: 0.1s;">Growth strategies, data analysis, and digital marketing teardowns.</p>
+        </div>
+    </div>
+
+    <!-- Blog Grid Content -->
+    <div class="container section-padding pt-0 py-50">
+        <div class="blog-grid" id="all-blogs-grid" style="margin-top: 50px;"></div>
+        
+        <!-- Pagination -->
+        <div class="center-text mt-50" style="margin-top: 60px;">
+            <div class="pagination">
+                <button class="btn btn-outline" disabled><i class="fa-solid fa-chevron-left"></i> Prev</button>
+                <button class="btn btn-primary">1</button>
+                <button class="btn btn-outline">2</button>
+                <button class="btn btn-outline">3</button>
+                <button class="btn btn-outline">Next <i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer secondary-bg">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="logo">GK Malneedi<span class="accent-text">.</span></span>
+                    <p>Data-Driven Marketing & Full-Stack Development.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#services">Skills</a>
+                    <a href="index.html#skills">Tools</a>
+                    <a href="index.html#portfolio">Portfolio</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://www.linkedin.com/in/gopikrishna-malneedi/" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 and developed by Gopikrishna Malneedi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const categories = ['Analytics', 'Paid Ads', 'SEO', 'Conversion Rate', 'Email Marketing', 'Social Media'];
+        const titles = [
+            'The Transition to GA4: What Every Business Owner Needs to Know',
+            'Why Your Meta Ads Are Failing (And How to Fix The Funnel)',
+            'SEO in 2024: Moving Beyond Keyword Stuffing',
+            'How to Increase Landing Page Conversions by 30%',
+            'Email Flows That Generate Revenue on Auto-Pilot',
+            'Building B2B Authority on LinkedIn',
+            'The Anatomy of a High-Converting Facebook Ad',
+            'Technical SEO: Fixing Crawl Errors and Indexing Issues',
+            'Understanding Attribution Models in Digital Marketing',
+            "A Beginner's Guide to Programmatic Advertising"
+        ];
+        
+        const grid = document.getElementById('all-blogs-grid');
+        let html = '';
+        for(let i=0; i<25; i++) {
+            let cat = categories[i % categories.length];
+            let title = titles[i % titles.length];
+            // Render directly in active state since there are many
+            html += `<a href="article.html" class="blog-card glass-card reveal active" style="opacity:1; transform:translateY(0)">
+                <div class="blog-content">
+                    <span class="blog-tag">${cat}</span>
+                    <h3>${title} - Insight #${i+1}</h3>
+                    <p>Learn the proven strategies that industry leaders use to scale. Dive deep into the data behind this approach.</p>
+                    <span class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+            </a>`;
+        }
+        grid.innerHTML = html;
+    </script>
+</body>
+</html>

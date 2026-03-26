@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Digital Marketing Portfolio</title>
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --surface: #1e293b;
+            --primary: #8b5cf6;
+            --text: #f8fafc;
+        }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-dark); color: var(--text); padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; background: var(--surface); padding: 30px; border-radius: 12px; }
+        input, textarea { width: 100%; padding: 10px; margin: 10px 0; background: #334155; border: none; color: white; border-radius: 6px; }
+        button { background: var(--primary); color: white; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; width: 100%; margin-top: 10px; }
+        .hidden { display: none; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        h1, h2, h3 { color: var(--text); border-bottom: 1px solid #334; padding-bottom: 10px;}
+        .blog-item { background: #334155; padding: 10px; margin: 10px 0; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; }
+        .btn-delete { background: #ef4444; width: auto; padding: 5px 10px; margin: 0; }
+        #logoutBtn { background: transparent; border: 1px solid var(--primary); color: var(--primary); width: auto; float: right; margin-top: 0;}
+    </style>
+</head>
+<body>
+
+    <!-- LOGIN SCREEN -->
+    <div id="loginScreen" class="container">
+        <h1>Admin Login</h1>
+        <p>Enter your credentials to manage the portfolio content.</p>
+        <input type="text" id="username" placeholder="Username (admin)" />
+        <input type="password" id="password" placeholder="Password (admin123)" />
+        <button onclick="login()">Log In</button>
+    </div>
+
+    <!-- DASHBOARD SCREEN -->
+    <div id="dashboardScreen" class="container hidden">
+        <button id="logoutBtn" onclick="logout()">Logout</button>
+        <h1>Portfolio Admin Dashboard</h1>
+        
+        <h2>Contact Information</h2>
+        <div class="grid">
+            <input type="text" id="contactEmail" placeholder="Email Address">
+            <input type="text" id="contactPhone" placeholder="Phone Number">
+            <input type="text" id="contactAddress" placeholder="Address">
+            <button onclick="updateContact()">Save Contact Info</button>
+        </div>
+
+        <h2 style="margin-top: 40px;">Add New Blog Post</h2>
+        <form id="blogForm" onsubmit="addBlog(event)">
+            <input type="text" id="blogTitle" placeholder="Blog Title" required>
+            <textarea id="blogExcerpt" placeholder="Short Excerpt (shows on card)" rows="3" required></textarea>
+            <textarea id="blogContent" placeholder="Full Blog Content (HTML supported)" rows="8" required></textarea>
+            <label style="display:block; margin-top:10px;">Cover Image:</label>
+            <input type="file" id="blogImage" accept="image/*" required>
+            <button type="submit">Publish Blog</button>
+        </form>
+
+        <h2 style="margin-top: 40px;">Current Blog Posts</h2>
+        <div id="blogsList"></div>
+    </div>
+
+    <script>
+        const API = 'http://localhost:3500/api';
+        
+        // Setup initial view
+        if(localStorage.getItem('token')) {
+            document.getElementById('loginScreen').classList.add('hidden');
+            document.getElementById('dashboardScreen').classList.remove('hidden');
+            loadData();
+        }
+
+        async function login() {
+            const u = document.getElementById('username').value;
+            const p = document.getElementById('password').value;
+            const res = await fetch(API + '/auth/login', {
+                method: 'POST', headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username: u, password: p })
+            });
+            const data = await res.json();
+            if(data.token) {
+                localStorage.setItem('token', data.token);
+                window.location.reload();
+            } else { alert('Invalid Login!'); }
+        }
+
+        function logout() {
+            localStorage.removeItem('token');
+            window.location.reload();
+        }
+
+        function getAuthHeader() { return { 'Authorization': 'Bearer ' + localStorage.getItem('token') }; }
+
+        async function loadData() {
+            // Load Contact
+            const cRes = await fetch(API + '/contact');
+            const contact = await cRes.json();
+            if(contact.email) document.getElementById('contactEmail').value = contact.email;
+            if(contact.phone) document.getElementById('contactPhone').value = contact.phone;
+            if(contact.address) document.getElementById('contactAddress').value = contact.address;
+
+            // Load Blogs
+            const bRes = await fetch(API + '/blogs');
+            const blogs = await bRes.json();
+            const bList = document.getElementById('blogsList');
+            bList.innerHTML = '';
+            blogs.forEach(b => {
+                bList.innerHTML += `
+                    <div class="blog-item">
+                        <span><strong>${b.title}</strong> (${b.date})</span>
+                        <button class="btn-delete" onclick="deleteBlog('${b.id}')">Delete</button>
+                    </div>`;
+            });
+        }
+
+        async function updateContact() {
+            const contact = {
+                email: document.getElementById('contactEmail').value,
+                phone: document.getElementById('contactPhone').value,
+                address: document.getElementById('contactAddress').value
+            };
+            await fetch(API + '/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', ...getAuthHeader() },
+                body: JSON.stringify(contact)
+            });
+            alert('Contact Info Saved!');
+        }
+
+        async function addBlog(e) {
+            e.preventDefault();
+            const formData = new FormData();
+            formData.append('title', document.getElementById('blogTitle').value);
+            formData.append('excerpt', document.getElementById('blogExcerpt').value);
+            formData.append('content', document.getElementById('blogContent').value);
+            formData.append('image', document.getElementById('blogImage').files[0]);
+
+            const res = await fetch(API + '/blogs', {
+                method: 'POST',
+                headers: getAuthHeader(),
+                body: formData
+            });
+
+            if(res.ok) {
+                alert('Blog Published!');
+                document.getElementById('blogForm').reset();
+                loadData();
+            } else { alert('Auth Error - Try Logging in again.'); }
+        }
+
+        async function deleteBlog(id) {
+            if(!confirm('Delete this blog?')) return;
+            const res = await fetch(API + '/blogs/' + id, { method: 'DELETE', headers: getAuthHeader() });
+            if(res.ok) loadData();
+        }
+    </script>
+</body>
+</html>
