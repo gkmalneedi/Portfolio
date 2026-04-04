@@ -51,33 +51,17 @@
     </nav>
 
     <!-- Article Content -->
-    <div class="article-header container">
-        <div class="article-meta animate-fade-in">
-            <span><i class="fa-regular fa-calendar"></i> October 24, 2024</span>
-            <span><i class="fa-regular fa-user"></i> Digital Expert</span>
-            <span class="blog-tag">Analytics</span>
+    <div id="article-header" class="article-header container">
+        <div class="article-meta animate-fade-in" id="article-meta">
+            <span><i class="fa-regular fa-calendar"></i> <span id="article-date">Loading...</span></span>
+            <span id="article-tag-badge" class="blog-tag"></span>
         </div>
-        <h1 class="animate-fade-in" style="animation-delay: 0.1s;">The Transition to GA4: What Every Business Owner Needs to Know</h1>
+        <h1 class="animate-fade-in" id="article-title" style="animation-delay: 0.1s;">Loading article...</h1>
     </div>
 
     <div class="container section-padding pt-0 article-content animate-slide-down" style="animation-delay: 0.2s;">
-        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="GA4 Dashboard">
-        
-        <p>Google Analytics 4 (GA4) represents a massive shift in how we collect and analyze website and app data. Unlike its predecessor, standard Universal Analytics (UA), GA4 introduces a new data model based on events and parameters rather than sessions and pageviews.</p>
-
-        <h2>Why The Shift Was Necessary</h2>
-        <p>With changing privacy regulations (like GDPR and CCPA) and the increasing difficulty of tracking users via cookies across devices, GA4 uses machine learning to fill in data gaps. The focus is on the entire customer journey, not just fragmented visits.</p>
-
-        <h2>Key Differences in GA4</h2>
-        <ul>
-            <li><strong>Event-Based Tracking:</strong> Everything is an event. Pageviews, clicks, purchases—all are handled equally.</li>
-            <li><strong>Cross-Device Tracking:</strong> Better stitching of user pathways seamlessly from mobile to desktop.</li>
-            <li><strong>Predictive Metrics:</strong> Built-in AI to predict purchase probability, churn probability, and revenue over time.</li>
-        </ul>
-
-        <h2>How to Prepare Your Business</h2>
-        <p>If you haven't fully transitioned to GA4 or optimized your events, you are likely losing valuable marketing attribution data. It is critical to redefine what conversions mean for your business and set up the corresponding event parameters accurately so you don't lose historical alignment.</p>
-
+        <div id="article-image-wrap"></div>
+        <div id="article-body"></div>
         <div class="center-text" style="margin-top: 60px; padding-top: 30px; border-top: 1px solid var(--glass-border);">
             <a href="blog.html" class="btn btn-outline"><i class="fa-solid fa-arrow-left"></i> Back to All Articles</a>
         </div>
@@ -110,5 +94,30 @@
         </div>
     </footer>
     <script src="script.js"></script>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const articleId = params.get('id');
+        if (articleId) {
+            fetch('/api/blogs')
+                .then(r => r.json())
+                .then(blogs => {
+                    const blog = blogs.find(b => b.id === articleId);
+                    if (!blog) { document.getElementById('article-title').textContent = 'Article not found'; return; }
+                    document.title = blog.title + ' | GK Malneedi';
+                    document.getElementById('article-title').textContent = blog.title;
+                    document.getElementById('article-date').textContent = blog.date || '';
+                    document.getElementById('article-tag-badge').textContent = blog.tag || 'General';
+                    if (blog.image) {
+                        document.getElementById('article-image-wrap').innerHTML = `<img src="${blog.image}" alt="${blog.title}">`;
+                    }
+                    const content = blog.content || '';
+                    document.getElementById('article-body').innerHTML = content.split('\n\n').map(p => p.trim() ? `<p>${p.replace(/\n/g,'<br>')}</p>` : '').join('');
+                })
+                .catch(() => { document.getElementById('article-title').textContent = 'Failed to load article'; });
+        } else {
+            document.getElementById('article-title').textContent = 'No article selected';
+            document.getElementById('article-date').textContent = '';
+        }
+    </script>
 </body>
 </html>

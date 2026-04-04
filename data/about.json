@@ -1,0 +1,67 @@
+{
+  "imageUrl": "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=800&q=80",
+  "badge1": "📈 9+ Years",
+  "badge2": "🎯 3x ROI Avg",
+  "heading": "Turning Data into",
+  "headingAccent": "Revenue.",
+  "paragraphs": [
+    "With over 9 years of hands-on experience in the digital marketing landscape, I've partnered with brands, founders, and technology companies to transform underperforming metrics into scalable, revenue-generating growth engines.",
+    "I don't believe in vanity metrics or surface-level marketing.",
+    "Instead, I take a data-first, performance-driven approach—analyzing user behavior, identifying growth gaps, and building strategies that directly impact your bottom line.",
+    "From SEO and performance marketing to social media and advanced analytics, I design and execute end-to-end marketing ecosystems that are built to scale. Every campaign, funnel, and touchpoint is optimized with one goal in mind: measurable ROI and sustainable growth."
+  ],
+  "featureCards": [
+    {
+      "id": "1",
+      "emoji": "💡",
+      "title": "What Sets Me Apart",
+      "intro": "Why leading brands partner with me:",
+      "items": [
+        { "icon": "fa-check", "text": "I don't just run campaigns — I engineer growth systems" },
+        { "icon": "fa-check", "text": "I combine strategy + execution + analytics under one roof" },
+        { "icon": "fa-check", "text": "I work across brands and IT/technology services, understanding both B2C and B2B dynamics" },
+        { "icon": "fa-check", "text": "I focus on predictable scaling, not random spikes" }
+      ]
+    },
+    {
+      "id": "2",
+      "emoji": "🚀",
+      "title": "My Approach",
+      "intro": "My methodology is simple but powerful: <strong>Analyze → Strategize → Execute → Optimize → Scale</strong>",
+      "items": [
+        { "icon": "fa-arrow-right", "text": "Deep data analysis to uncover opportunities" },
+        { "icon": "fa-arrow-right", "text": "Conversion-focused strategy tailored to your business" },
+        { "icon": "fa-arrow-right", "text": "Multi-channel execution (SEO, Paid Ads, Social Media)" },
+        { "icon": "fa-arrow-right", "text": "Continuous optimization using real-time insights" },
+        { "icon": "fa-arrow-right", "text": "Scaling what works to maximize ROI" }
+      ]
+    },
+    {
+      "id": "3",
+      "emoji": "📊",
+      "title": "The Impact I Deliver",
+      "intro": "I help businesses:",
+      "items": [
+        { "icon": "fa-chart-line", "text": "Increase qualified traffic, not just clicks" },
+        { "icon": "fa-bolt", "text": "Generate high-intent leads" },
+        { "icon": "fa-filter", "text": "Improve conversion rates across funnels" },
+        { "icon": "fa-layer-group", "text": "Build long-term digital assets (SEO, brand authority)" },
+        { "icon": "fa-arrow-trend-up", "text": "Achieve consistent and predictable growth" }
+      ]
+    },
+    {
+      "id": "4",
+      "emoji": "🧠",
+      "title": "Core Expertise",
+      "intro": "My technical and strategic toolkit:",
+      "items": [
+        { "icon": "fa-magnifying-glass", "text": "Search Engine Optimization (SEO)" },
+        { "icon": "fa-bullseye", "text": "Performance Marketing (Google Ads, Meta Ads)" },
+        { "icon": "fa-share-nodes", "text": "Social Media Growth" },
+        { "icon": "fa-chart-pie", "text": "Conversion Rate Optimization (CRO)" },
+        { "icon": "fa-chart-column", "text": "Analytics & Tracking (GA4, GTM)" }
+      ]
+    }
+  ],
+  "highlightText": "If you're looking for a partner who understands both marketing and business growth — you're in the right place."
+}

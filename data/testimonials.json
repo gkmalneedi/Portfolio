@@ -1,0 +1,18 @@
+[
+  {
+    "id": "1",
+    "quote": "Working with them transformed our inbound strategy. We saw a 3x return on ad spend within the first two months. Highly recommended for any scaling B2B.",
+    "name": "James Doe",
+    "role": "CEO at TechStart",
+    "initials": "JD",
+    "stars": 5
+  },
+  {
+    "id": "2",
+    "quote": "Unparalleled expertise in GA4 and technical SEO. Completely fixed our tracking issues and boosted our organic traffic massively. A game changer.",
+    "name": "Sarah Adams",
+    "role": "Founder, Elevate Brands",
+    "initials": "SA",
+    "stars": 5
+  }
+]

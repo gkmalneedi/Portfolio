@@ -94,36 +94,30 @@
 
     <script src="script.js"></script>
     <script>
-        const categories = ['Analytics', 'Paid Ads', 'SEO', 'Conversion Rate', 'Email Marketing', 'Social Media'];
-        const titles = [
-            'The Transition to GA4: What Every Business Owner Needs to Know',
-            'Why Your Meta Ads Are Failing (And How to Fix The Funnel)',
-            'SEO in 2024: Moving Beyond Keyword Stuffing',
-            'How to Increase Landing Page Conversions by 30%',
-            'Email Flows That Generate Revenue on Auto-Pilot',
-            'Building B2B Authority on LinkedIn',
-            'The Anatomy of a High-Converting Facebook Ad',
-            'Technical SEO: Fixing Crawl Errors and Indexing Issues',
-            'Understanding Attribution Models in Digital Marketing',
-            "A Beginner's Guide to Programmatic Advertising"
-        ];
-        
         const grid = document.getElementById('all-blogs-grid');
-        let html = '';
-        for(let i=0; i<25; i++) {
-            let cat = categories[i % categories.length];
-            let title = titles[i % titles.length];
-            // Render directly in active state since there are many
-            html += `<a href="article.html" class="blog-card glass-card reveal active" style="opacity:1; transform:translateY(0)">
-                <div class="blog-content">
-                    <span class="blog-tag">${cat}</span>
-                    <h3>${title} - Insight #${i+1}</h3>
-                    <p>Learn the proven strategies that industry leaders use to scale. Dive deep into the data behind this approach.</p>
-                    <span class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></span>
-                </div>
-            </a>`;
-        }
-        grid.innerHTML = html;
+        fetch('/api/blogs')
+            .then(r => r.json())
+            .then(blogs => {
+                if (!blogs.length) {
+                    grid.innerHTML = '<p style="text-align:center;color:var(--text-secondary);padding:60px 0;">No blog posts yet. Check back soon!</p>';
+                    return;
+                }
+                grid.innerHTML = blogs.map(b => `
+                    <a href="article.html?id=${b.id}" class="blog-card glass-card reveal active" style="opacity:1;transform:translateY(0)">
+                        ${b.image ? `<div class="blog-card-img" style="height:180px;overflow:hidden;border-radius:12px 12px 0 0;"><img src="${b.image}" alt="${b.title}" style="width:100%;height:100%;object-fit:cover;" loading="lazy"></div>` : ''}
+                        <div class="blog-content">
+                            <span class="blog-tag">${b.tag || 'General'}</span>
+                            <h3>${b.title}</h3>
+                            <p>${b.excerpt || ''}</p>
+                            <span style="font-size:0.8rem;color:var(--text-secondary);">${b.date || ''}</span>
+                            <span class="read-more" style="display:block;margin-top:8px;">Read Article <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </a>
+                `).join('');
+            })
+            .catch(() => {
+                grid.innerHTML = '<p style="text-align:center;color:var(--text-secondary);">Failed to load posts.</p>';
+            });
     </script>
 </body>
 </html>

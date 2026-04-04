@@ -26,7 +26,7 @@
     <!-- Navigation -->
     <nav id="navbar" class="navbar">
         <div class="container nav-content animate-slide-down">
-            <a href="#" class="logo">GK Malneedi<span class="accent-text">.</span></a>
+            <a href="#" class="logo"><span class="site-name">GK Malneedi</span><span class="accent-text">.</span></a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Skills</a></li>
@@ -45,12 +45,12 @@
         <div class="hero-bg-glow"></div>
         <div class="container hero-content">
             <div class="hero-text">
-                <p class="eyebrow animate-fade-in">EXPERT DIGITAL MARKETING STRATEGIST</p>
-                <h1 class="animate-fade-in" style="animation-delay: 0.1s;">Driving Growth for Brands and IT Companies Through <span class="gradient-text">Data-Led</span> Marketing.</h1>
-                <p class="subheadline animate-fade-in" style="animation-delay: 0.2s;">From SEO to performance marketing and analytics, I build growth systems that deliver measurable results.</p>
+                <p class="eyebrow animate-fade-in" id="hero-eyebrow">EXPERT DIGITAL MARKETING STRATEGIST</p>
+                <h1 class="animate-fade-in" id="hero-headline" style="animation-delay: 0.1s;">Driving Growth for Brands and IT Companies Through <span class="gradient-text">Data-Led</span> Marketing.</h1>
+                <p class="subheadline animate-fade-in" id="hero-subheadline" style="animation-delay: 0.2s;">From SEO to performance marketing and analytics, I build growth systems that deliver measurable results.</p>
                 <div class="hero-ctas animate-fade-in" style="animation-delay: 0.3s;">
-                    <a href="assets/resume.pdf" class="btn btn-primary" download>Download Resume</a>
-                    <a href="#contact" class="btn btn-outline">Get a Free Site Audit</a>
+                    <a href="assets/resume.pdf" id="hero-cta1" class="btn btn-primary" download>Download Resume</a>
+                    <a href="#contact" id="hero-cta2" class="btn btn-outline">Get a Free Site Audit</a>
                 </div>
             </div>
             <div class="hero-visual animate-fade-in" style="animation-delay: 0.4s;">
@@ -70,21 +70,23 @@
         <div class="container about-container">
             <div class="about-visual reveal">
                 <div class="portrait-placeholder">
-                    <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=800&q=80" alt="Digital Marketing Expert" loading="lazy">
-                    <div class="glass-badge badge-1">📈 9+ Years</div>
-                    <div class="glass-badge badge-2">🎯 3x ROI Avg</div>
+                    <img id="about-image" src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=800&q=80" alt="Digital Marketing Expert" loading="lazy">
+                    <div class="glass-badge badge-1" id="about-badge1">📈 9+ Years</div>
+                    <div class="glass-badge badge-2" id="about-badge2">🎯 3x ROI Avg</div>
                 </div>
             </div>
             <div class="about-text reveal">
-                <h2>Turning Data into <span class="accent-text">Revenue.</span></h2>
+                <h2 id="about-heading">Turning Data into <span class="accent-text">Revenue.</span></h2>
+                <div id="about-paragraphs">
                 <p>With over 9 years of hands-on experience in the digital marketing landscape, I’ve partnered with brands, founders, and technology companies to transform underperforming metrics into scalable, revenue-generating growth engines.</p>
                 <p>I don’t believe in vanity metrics or surface-level marketing.</p>
                 <p>Instead, I take a data-first, performance-driven approach—analyzing user behavior, identifying growth gaps, and building strategies that directly impact your bottom line.</p>
                 <p>From SEO and performance marketing to social media and advanced analytics, I design and execute end-to-end marketing ecosystems that are built to scale. Every campaign, funnel, and touchpoint is optimized with one goal in mind: measurable ROI and sustainable growth.</p>
+                </div>
             </div>
         </div>
 
-        <div class="container about-features-grid mt-50">
+        <div class="container about-features-grid mt-50" id="about-features">
             <div class="feature-card glass-card reveal">
                 <h3 class="about-subhead mt-0">💡 What Sets Me Apart</h3>
                 <p>Why leading brands partner with me:</p>
@@ -134,7 +136,7 @@
         </div>
 
         <div class="container reveal">
-            <div class="highlight-box glass-card center-text">
+            <div class="highlight-box glass-card center-text" id="about-highlight">
                 <p><strong>If you're looking for a partner who understands both marketing and business growth — you're in the right place.</strong></p>
             </div>
         </div>
@@ -148,7 +150,7 @@
             <div class="section-title reveal">
                 <h2>How I Drive <span class="gradient-text">Growth</span> For Your Business</h2>
             </div>
-            <div class="services-grid">
+            <div class="services-grid" id="services-grid">
                 <!-- Card 1 -->
                 <div class="service-card glass-card reveal">
                     <div class="card-icon"><i class="fa-solid fa-robot"></i></div>
@@ -253,7 +255,7 @@
             <div class="section-title reveal">
                 <h2>Proven Results. <span class="accent-text">Real Numbers.</span></h2>
             </div>
-            <div class="portfolio-grid">
+            <div class="portfolio-grid" id="portfolio-grid">
                 <!-- Project 1: Ad Campaigns & ROI Generation -->
                 <div class="portfolio-card glass-card reveal">
                     <div class="portfolio-img">
@@ -355,7 +357,7 @@
                 <p>80+ AI tools, marketing platforms, and technologies for exceptional results</p>
             </div>
             
-            <div id="tools" class="tools-pills reveal">
+            <div id="tools-pills-container" class="tools-pills reveal">
                 <button class="tool-pill active" data-category="AI Tools">AI Tools <span>(8)</span></button>
                 <button class="tool-pill" data-category="Development">Development <span>(6)</span></button>
                 <button class="tool-pill" data-category="Analytics">Analytics <span>(5)</span></button>
@@ -382,7 +384,7 @@
             <div class="section-title center-text reveal">
                 <h2>What Founders & Brands <span class="accent-text">Are Saying</span></h2>
             </div>
-            <div class="testimonial-carousel reveal">
+            <div class="testimonial-carousel reveal" id="testimonials-carousel">
                 <div class="testimonial-card glass-card">
                     <div class="stars">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -419,7 +421,7 @@
             <div class="section-title reveal">
                 <h2>Insights & Strategies <span class="gradient-text">Based on Data</span></h2>
             </div>
-            <div class="blog-grid reveal">
+            <div class="blog-grid reveal" id="blog-preview-grid">
                 <a href="#" class="blog-card glass-card">
                     <div class="blog-content">
                         <span class="blog-tag">Analytics</span>
@@ -491,8 +493,8 @@
         <div class="container">
             <div class="footer-top">
                 <div class="footer-brand">
-                    <span class="logo">GK Malneedi<span class="accent-text">.</span></span>
-                    <p>Data-Driven Marketing & Full-Stack Development.</p>
+                    <span class="logo"><span class="site-name">GK Malneedi</span><span class="accent-text">.</span></span>
+                    <p id="footer-tagline">Data-Driven Marketing & Full-Stack Development.</p>
                 </div>
                 <div class="footer-links">
                     <a href="#about">About</a>
@@ -503,12 +505,12 @@
                     <a href="#contact">Contact</a>
                 </div>
                 <div class="footer-socials">
-                    <a href="https://www.linkedin.com/in/gopikrishna-malneedi/" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/gopikrishna-malneedi/" class="social-linkedin" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" class="social-twitter" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 and developed by Gopikrishna Malneedi.</p>
+                <p id="footer-text">© 2026 and developed by Gopikrishna Malneedi.</p>
             </div>
         </div>
     </footer>
@@ -529,14 +531,6 @@
 
     <!-- Script -->
     <script src="script.js"></script>
-    <script>
-        // Fetch dynamic contact info from the local Node server
-        fetch('/api/contact')
-            .then(res => res.json())
-            .then(data => {
-                if(data.email) document.getElementById('dyn-email').innerText = data.email;
-                if(data.address) document.getElementById('dyn-address').innerText = data.address;
-            }).catch(e => console.warn('Backend not running locally yet.', e));
-    </script>
+    <script src="content-loader.js"></script>
 </body>
 </html>

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "1",
+    "icon": "fa-robot",
+    "title": "AI-Powered Marketing & Automation",
+    "problem": "Manual marketing processes, slow execution, and missed growth opportunities.",
+    "solution": "Leverage AI tools for content generation, ad optimization, audience insights, and automated workflows across marketing channels.",
+    "result": "Faster execution, smarter decisions, reduced costs, and scalable growth with AI-driven precision."
+  },
+  {
+    "id": "2",
+    "icon": "fa-magnifying-glass-chart",
+    "title": "SEO Services",
+    "problem": "Invisible on Google?",
+    "solution": "Comprehensive technical SEO, content strategy, and authoritative link building powered by data and search intent analysis.",
+    "result": "Dominate search results, outrank competitors, and capture high-intent organic traffic."
+  },
+  {
+    "id": "3",
+    "icon": "fa-comments-dollar",
+    "title": "Performance Marketing",
+    "problem": "Burning through ad budget with low returns?",
+    "solution": "Data-backed campaigns across Google & Meta Ads, enhanced with AI-driven bidding strategies and continuous A/B testing.",
+    "result": "Lower CPA, higher ROAS, and a predictable pipeline of qualified leads."
+  },
+  {
+    "id": "4",
+    "icon": "fa-hashtag",
+    "title": "Social Media Marketing",
+    "problem": "Low engagement and zero brand authority?",
+    "solution": "Strategic content planning, AI-assisted creatives, and community-driven growth strategies.",
+    "result": "Build a loyal audience that converts into consistent revenue."
+  },
+  {
+    "id": "5",
+    "icon": "fa-laptop-code",
+    "title": "Website Optimization",
+    "problem": "Traffic but no sales? Blind to what's working?",
+    "solution": "Full GA4 / GTM integration, funnel tracking, heatmaps, and conversion-focused landing page optimization.",
+    "result": "Turn passive visitors into active buyers with clear data visibility."
+  },
+  {
+    "id": "6",
+    "icon": "fa-filter",
+    "title": "Conversion Funnel Strategy",
+    "problem": "Leads are dropping off before converting.",
+    "solution": "Design and optimize end-to-end funnels—from awareness to conversion—aligned with user intent and behavior.",
+    "result": "Higher conversion rates and a seamless customer journey."
+  },
+  {
+    "id": "7",
+    "icon": "fa-envelope-circle-check",
+    "title": "Marketing Automation & CRM",
+    "problem": "Leads are not nurtured or followed up effectively.",
+    "solution": "Automated email sequences, CRM workflows, and lead scoring systems.",
+    "result": "Convert more leads without increasing acquisition costs."
+  },
+  {
+    "id": "8",
+    "icon": "fa-pen-nib",
+    "title": "Content Marketing & Personal Branding",
+    "problem": "No authority or visibility in your niche.",
+    "solution": "SEO-driven content, LinkedIn positioning, and value-based storytelling.",
+    "result": "Build trust, authority, and inbound demand."
+  },
+  {
+    "id": "9",
+    "icon": "fa-chart-pie",
+    "title": "Data & Attribution Modeling",
+    "problem": "Unclear which channels drive real revenue.",
+    "solution": "Advanced tracking, attribution models, and cross-channel performance analysis.",
+    "result": "Make smarter decisions backed by accurate data."
+  }
+]

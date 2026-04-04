@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80",
+    "overlay": "E-Commerce Growth Strategy",
+    "problem": "Stagnant ROAS on Meta ads and high cart abandonment rates.",
+    "strategy": "Deployed dynamic product ad campaigns, implemented strict A/B testing on multi-channel creatives, and optimized the overall UX.",
+    "result": "Scaled ad spend by 300% while maintaining a 4.5x ROAS, resulting in a 40% jump in total ROI over Q4."
+  },
+  {
+    "id": "2",
+    "image": "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?auto=format&fit=crop&w=600&q=80",
+    "overlay": "B2B Enterprise Outbound",
+    "problem": "Sales pipeline was completely dry due to poorly targeted, generic mass cold emails.",
+    "strategy": "Built hyper-targeted Ideal Customer Profile (ICP) databases using Apollo & ZoomInfo. Designed AI-personalized sequenced mailing campaigns.",
+    "result": "Achieved a 35% open rate, generated 45+ highly qualified sales calls, and closed over $500k in pipeline value."
+  },
+  {
+    "id": "3",
+    "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80",
+    "overlay": "Custom Web App Development",
+    "problem": "A legacy corporate website was incredibly slow to load, bleeding organic traffic, and lacked conversion flow.",
+    "strategy": "Engineered a completely custom, highly-optimized React/Next.js web platform tailored exactly to specific business needs.",
+    "result": "Achieved perfect 100/100 Lighthouse scores, reduced server load times by 400%, and dropped bounce rates by 60%."
+  },
+  {
+    "id": "4",
+    "image": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=600&q=80",
+    "overlay": "FinTech Brand Launch",
+    "problem": "A brand new startup completely lacked brand presence, messaging authority, and investor-ready architecture.",
+    "strategy": "Defined end-to-end brand identity from scratch—including premium UI/UX mockups, typography, go-to-market storytelling, and positioning.",
+    "result": "Successfully positioned the brand as a highly premium market leader, directly facilitating a $2M seed funding round in 6 months."
+  },
+  {
+    "id": "5",
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80",
+    "overlay": "Multi-Channel Business Growth",
+    "problem": "A regional service business was overly reliant on referrals and struggled to scale their operation into new markets.",
+    "strategy": "Constructed fully automated CRM sales pipelines, launched hyper-localized SEO cluster strategies, and ran aggressive Google Ads.",
+    "result": "Captured almost 90% of local search volume within the targeted territories, accelerating their YOY franchise growth by 300%."
+  },
+  {
+    "id": "6",
+    "image": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=600&q=80",
+    "overlay": "Organic Search Dominance",
+    "problem": "An established software firm was consistently losing massive market share to larger enterprise competitors in strictly remote channels.",
+    "strategy": "Deployed a 12-month data-informed digital marketing SEO content strategy, heavily targeting the user's specific pain-point search queries.",
+    "result": "Generated a 210% massive increase in high-intent organic traffic leads, permanently destroying dependency on expensive paid channels."
+  }
+]
