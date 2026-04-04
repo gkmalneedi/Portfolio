@@ -7,7 +7,7 @@ const path = require('path');
 const multer = require('multer');
 
 const app = express();
-const PORT = process.env.PORT || 3500;
+const PORT = process.env.PORT || 5000;
 const SECRET_KEY = 'super_secret_replit_key'; // Hardcoded for simplicity in Replit demo
 
 app.use(cors());

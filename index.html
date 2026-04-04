@@ -531,7 +531,7 @@
     <script src="script.js"></script>
     <script>
         // Fetch dynamic contact info from the local Node server
-        fetch('http://localhost:3500/api/contact')
+        fetch('/api/contact')
             .then(res => res.json())
             .then(data => {
                 if(data.email) document.getElementById('dyn-email').innerText = data.email;
